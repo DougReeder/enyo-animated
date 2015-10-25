@@ -1,4 +1,4 @@
-# Enyo-Animated: Animated widgets for Enyo
+# Enyo-Animated: animated Controls for the Enyo framework
 
 These Controls are designed to
 * help the user mentally model the application UI
@@ -7,8 +7,7 @@ These Controls are designed to
 * be easy for developers to incorporate in apps
 * work with Onyx, Mochi or Moonstone widgets (the default styling is usually Onyx).
 
-They are not designed to be showy.  
-Fallbacks for older browsers have not yet been added.
+They are not designed to be showy.  Fallbacks for older browsers have not yet been added.
 
 They are designed around the properties that GPUs can readily animate:
 * position: transform: translate(x,y)
@@ -28,18 +27,26 @@ They are designed around the properties that GPUs can readily animate:
 [Cubic-Bezier design tool](http://cubic-bezier.com/)
 
 
-## ToastBottomSlide
+## Using
+
+1. Clone this repo to a directory in the lib directory of an Enyo app (beside layout).
+2. To source/package.js, add the line `"$lib/enyo-animated",`
+3. Add one or more of the controls to your app.
+
+
+## animated.ToastBottomSlide
 
 A straightforward toast, which moves like a CD tray.
 It is centered and by default it's as wide as the screen and tall enough to contain its children.
-Set a width or height in the style property.
+Set a width or height in the style property.  Default styling is white text on a dark background.
 
 
-## ToastBottomLeftCurve
+## animated.ToastBottomLeftCurve
 
 A corner toast, which moves as if mounted on a mechanical linkage, actuated by servo motors.
 By default, it's sized to contain its children.
-Set a width or height in its style property.
+Set a width or height in its style property.    Default styling is white text on a dark background.
+
 
 ## Unwritten widgets
 
@@ -48,6 +55,7 @@ Feel free to implement and contribute these.
 ### Expand-from-control-popup
 
 This Control would expand from a visible control, and contract back into it, like a Menu and its button.
+
 
 ## Other Enyo controls that are animated
 
@@ -58,15 +66,17 @@ Not all of these are optimized to animate smoothly.
 * [enyo.Panels](http://enyojs.com/docs/latest/developer-guide/building-apps/layout/panels.html) 
 and its descendants such as enyo.ImageCarousel
 * trees using [enyo.Node](http://enyojs.com/docs/latest/index.html#/kind/enyo.Node)
-* [enyo.Slidable](http://enyojs.com/docs/latest/index.html#/kind/enyo.Slideable) can be configured to produce toast.
+* [enyo.Slidable](http://enyojs.com/docs/latest/index.html#/kind/enyo.Slideable) can be configured as toast.
 * [enyo.PulldownList](http://enyojs.com/docs/latest/index.html#/kind/enyo.PulldownList)
 
-## Contributions
+
+## How to contribute
 
 * Develop on a git branch or fork.
 * Submit changes as a GitHub pull request, that merges cleanly and doesn't break any tests, to the master branch
 * Include the following line in the pull request comments, substituting your real name and email address, 
-to assert your compliance with [Open webOS Developer Grant and Certificate of Origin 1.0](http://www.openwebosproject.org/community/governance/dco/) 
+to assert your compliance with [Open webOS Developer Grant and Certificate of Origin 1.0](http://www.openwebosproject.org/community/governance/dco/)
+ 
 	Open-WebOS-DCO-1.0-Signed-Off-By: Joe Smith <joe@myco.com>
 
 

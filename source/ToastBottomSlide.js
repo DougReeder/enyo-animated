@@ -2,7 +2,7 @@
  * Created by doug on 10/12/15.
  */
 enyo.kind({
-    name: 'ToastBottomSlide',
+    name: 'animated.ToastBottomSlide',
     kind: 'Control',
     showing: true,   // true for proper initialization
     classes: 'toastBottomSlide',

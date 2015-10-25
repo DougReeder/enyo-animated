@@ -6,10 +6,10 @@ enyo.kind({
     kind: "FittableRows",
     fit: true,
     components:[
-        {kind: "ToastBottomSlide", style: 'width: 12em', components: [
+        {kind: "animated.ToastBottomSlide", style: 'width: 12em', components: [
             {content: "I'm a ToastBottomSlide!"}
         ]},
-        {kind: "ToastBottomLeftCurve", style: 'width: 13em', components: [
+        {kind: "animated.ToastBottomLeftCurve", style: 'width: 13em', components: [
             {name: 'question', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", style: 'margin-bottom: 10px'},
             {name: 'toasterYesBtn', kind: 'onyx.Button', content: $L('Yes'), ontap: 'toggleToastBottomLeftCurve'},
             {kind: 'onyx.Button', content: $L('No'), ontap: 'toggleToastBottomLeftCurve', style: 'float: right;'}

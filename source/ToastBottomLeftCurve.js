@@ -2,7 +2,7 @@
  * Created by doug on 10/20/15.
  */
 enyo.kind({
-    name: 'ToastBottomLeftCurve',
+    name: 'animated.ToastBottomLeftCurve',
     kind: 'Control',
     showing: true,   // true for proper initialization
     classes: 'toastBottomLeftCurve',

@@ -73,7 +73,7 @@ and its descendants such as enyo.ImageCarousel
 ## How to contribute
 
 * Develop on a git branch or fork.
-* Submit changes as a GitHub pull request, that merges cleanly and doesn't break any tests, to the master branch
+* Submit changes as a GitHub pull request to the master branch, that merges cleanly and doesn't break any tests (enyo-animated/test/SpecRunner.html) when running in current versions of Firefox or Chrome.
 * Include the following line in the pull request comments, substituting your real name and email address, 
 to assert your compliance with [Open webOS Developer Grant and Certificate of Origin 1.0](http://www.openwebosproject.org/community/governance/dco/)
  

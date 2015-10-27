@@ -6,12 +6,15 @@ enyo.kind({
     kind: 'Control',
     showing: true,   // true for proper initialization
     classes: 'toastBottomLeftCurve',
-    components: [
-        {name: 'inner', kind: 'Control', showing: true}
-    ],
+    events: {
+        onAnimateFinish: ''
+    },
     handlers: {
         ontransitionend: 'transitionComplete'
     },
+    components: [
+        {name: 'inner', kind: 'Control', showing: true}
+    ],
 
     create: function () {
         this.inherited(arguments);
@@ -52,5 +55,6 @@ enyo.kind({
         if (! this.get('showing')) {
             this.$.inner.applyStyle('box-shadow', 'none');
         }
+        this.doAnimateFinish();
     }
 });

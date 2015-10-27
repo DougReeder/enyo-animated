@@ -6,6 +6,9 @@ enyo.kind({
     kind: 'Control',
     showing: true,   // true for proper initialization
     classes: 'toastBottomSlide',
+    events: {
+        onAnimateFinish: ''
+    },
     handlers: {
         ontransitionend: 'transitionComplete'
     },
@@ -32,5 +35,6 @@ enyo.kind({
         if (! this.get('showing')) {
             this.applyStyle('box-shadow', 'none');
         }
+        this.doAnimateFinish();
     }
 });

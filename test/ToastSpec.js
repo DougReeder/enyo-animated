@@ -1,16 +1,17 @@
-/* unit & functional tests for animated.ToastBottomSlide
+/* unit & functional tests for animated.Toast
  * Copyright © 2015 Hominid Software */
-/*jsl:import ../source/ToastBottomSlide.js */
+/*jsl:import ../source/Toast.js */
 
-var ToastBottomSlideTestJig = enyo.kind({
-    name: "ToastBottomSlideTestJig",
+var ToastTestJig = enyo.kind({
+    name: "ToastTestJig",
     animateFinishResponse: null,
     components: [
         {
-            kind: "animated.ToastBottomSlide",
+            name: 'toast',
+            kind: "animated.Toast",
             onAnimateFinish: "animateFinish",
             components: [
-                {content: "I'm a ToastBottomSlide!"}
+                {content: "I'm a Toast!"}
             ]
         }
     ],
@@ -21,13 +22,13 @@ var ToastBottomSlideTestJig = enyo.kind({
 });
 
 
-describe('ToastBottomSlide', function () {
+describe('Toast', function () {
     var div, testJig;
 
     beforeEach( function () {
         div = document.createElement("div");
         document.body.appendChild(div);
-        testJig = new ToastBottomSlideTestJig();
+        testJig = new ToastTestJig();
         testJig.renderInto(div);
     });
 
@@ -44,6 +45,6 @@ describe('ToastBottomSlide', function () {
             expect(end - start).toBeLessThan(500);
             done();
         };
-        testJig.$.toastBottomSlide.show();
+        testJig.$.toast.show();
     });
 });

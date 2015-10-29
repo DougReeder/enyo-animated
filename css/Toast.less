@@ -1,5 +1,5 @@
-.toastBottomSlide {
-  position: absolute;
+.toast {
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -13,7 +13,6 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   padding: 1em;
-  color: white;
-  background: #4C4C4C;
-
+  color: @onyx-popup-text-color;
+  background: @onyx-popup-background @onyx-button-gradient repeat-x 0 bottom;
 }

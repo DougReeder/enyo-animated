@@ -1,5 +1,5 @@
 enyo.depends(
     //'animated.less'
-    'ToastBottomSlide.css',
+    'Toast.css',
     'ToastBottomLeftCurve.css'
 );

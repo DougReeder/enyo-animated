@@ -34,11 +34,23 @@ They are designed around the properties that GPUs can readily animate:
 3. Add one or more of the controls to your app.
 
 
-## animated.ToastBottomSlide
+## animated.Toast
 
-A straightforward toast, which moves like a CD tray.
-It is centered and by default it's as wide as the screen and tall enough to contain its children.
-Set a width or height in the style property.  Default styling is white text on a dark background.
+A toast, which moves like a CD tray in a straight line.
+Set the `locationV` property to `top`, `middle` or `bottom`.
+Set the `locationH` property to `left`, `middle` or `right`.
+It is not modal.
+Show and hide it with the usual `.show()`, `.hide()` and `.set('showing', boolean)`.
+
+Corner toasts are sized to contain their content, unless you style their height or width.
+
+Top and bottom edge toasts are as wide as their parent by default.
+If you set a width, they are centered.
+
+Left and right edge toasts are as tall as their parent.  
+At present, setting a height via CSS forces them to a corner.
+
+Default styling is white text on a dark background.
 
 
 ## animated.ToastBottomLeftCurve

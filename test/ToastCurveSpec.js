@@ -1,16 +1,18 @@
-/* unit & functional tests for animated.ToastBottomLeftCurve
+/* unit & functional tests for animated.ToastCurve
  * Copyright © 2015 Hominid Software */
-/*jsl:import ../source/ToastBottomLeftCurve.js */
+/*jsl:import ../source/ToastCurve.js */
 
-var ToastBottomLeftCurveTestJig = enyo.kind({
-    name: "ToastBottomLeftCurveTestJig",
+var ToastCurveTestJig = enyo.kind({
+    name: "ToastCurveTestJig",
     animateFinishResponse: null,
     components: [
         {
-            kind: "animated.ToastBottomLeftCurve",
+            kind: "animated.ToastCurve",
+            locationV: 'bottom',
+            locationH: 'right',
             onAnimateFinish: "animateFinish",
             components: [
-                {content: "I'm a ToastBottomLeftCurve!"}
+                {content: "I'm a ToastCurve!"}
             ]
         }
     ],
@@ -21,13 +23,13 @@ var ToastBottomLeftCurveTestJig = enyo.kind({
 });
 
 
-describe('ToastBottomLeftCurve', function () {
+describe('ToastCurve', function () {
     var div, testJig;
 
     beforeEach( function () {
         div = document.createElement("div");
         document.body.appendChild(div);
-        testJig = new ToastBottomLeftCurveTestJig();
+        testJig = new ToastCurveTestJig();
         testJig.renderInto(div);
     });
 
@@ -44,6 +46,6 @@ describe('ToastBottomLeftCurve', function () {
             expect(end - start).toBeLessThan(500);
             done();
         };
-        testJig.$.toastBottomLeftCurve.show();
+        testJig.$.toastCurve.show();
     });
 });

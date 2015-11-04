@@ -2,7 +2,7 @@
  * Created by doug on 10/20/15.
  */
 enyo.kind({
-    name: "animated.sample.Toasters",
+    name: "animated.sample.Toasts",
     kind: "FittableRows",
     fit: true,
     components: [
@@ -16,17 +16,17 @@ enyo.kind({
                 {name: 'toastBottom', kind: "animated.Toast", locationV: 'bottom', style: 'width: 12em', components: [
                     {content: "I'm a Toast at the bottom"}
                 ]},
-                {name: 'toastTopRight', kind: "animated.Toast", locationV: 'top', locationH: 'right', style: 'width: 10em; height: 6em', components: [
+                {name: 'toastTopRight', kind: "animated.Toast", locationV: 'top', locationH: 'right', style: 'width: 10em', components: [
                     {content: "I'm a Toast at the top right."}
                 ]},
-                {kind: "animated.ToastBottomLeftCurve", style: 'width: 13em', components: [
+                {kind: "animated.ToastCurve", locationV: 'bottom', locationH: 'left', style: 'width: 12em', components: [
                     {name: 'question', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", style: 'margin-bottom: 10px'},
-                    {name: 'toasterYesBtn', kind: 'onyx.Button', content: $L('Yes'), ontap: 'toggleToastBottomLeftCurve'},
-                    {kind: 'onyx.Button', content: $L('No'), ontap: 'toggleToastBottomLeftCurve', style: 'float: right;'}
+                    {name: 'toasterYesBtn', kind: 'onyx.Button', content: $L('Yes'), ontap: 'toggleToastCurve'},
+                    {kind: 'onyx.Button', content: $L('No'), ontap: 'toggleToastCurve', style: 'float: right;'}
                 ]},
                 {kind: "onyx.Toolbar", components: [
-                    {kind: "onyx.Button", content: "(Straight) Toasts", ontap: "toggleStraightToasts"},
-                    {kind: "onyx.Button", content: "ToastBottomLeftCurve", ontap: "toggleToastBottomLeftCurve"}
+                    {kind: "onyx.Button", content: "Toasts", ontap: "toggleStraightToasts"},
+                    {kind: "onyx.Button", content: "ToastCurve", ontap: "toggleToastCurve"}
                 ]},
                 {kind: "enyo.Scroller", fit: true, components: [
                     {name: "main", classes: "nice-padding", allowHtml: true}
@@ -43,7 +43,7 @@ enyo.kind({
         this.$.toastBottom.set('showing', ! this.$.toastBottom.get('showing'));
         this.$.toastTopRight.set('showing', ! this.$.toastTopRight.get('showing'));
     },
-    toggleToastBottomLeftCurve: function(inSender, inEvent) {
-        this.$.toastBottomLeftCurve.set('showing', ! this.$.toastBottomLeftCurve.get('showing'));
+    toggleToastCurve: function(inSender, inEvent) {
+        this.$.toastCurve.set('showing', ! this.$.toastCurve.get('showing'));
     }
 });

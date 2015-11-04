@@ -1,4 +1,4 @@
 enyo.depends(
     'Toast.js',
-    'ToastBottomLeftCurve.js'
+    'ToastCurve.js'
 );

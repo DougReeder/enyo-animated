@@ -44,20 +44,29 @@ Show and hide it with the usual `.show()`, `.hide()` and `.set('showing', boolea
 
 Corner toasts are sized to contain their content, unless you style their height or width.
 
-Top and bottom edge toasts are as wide as their parent by default.
+Top and bottom edge toasts are as wide as their parent, by default.
 If you set a width, they are centered.
 
-Left and right edge toasts are as tall as their parent.  
-At present, setting a height via CSS forces them to a corner.
+Left and right edge toasts are as tall as their parent, by default.  
+If you set a height, they are centered.
 
 Default styling is white text on a dark background.
 
 
-## animated.ToastBottomLeftCurve
+## animated.ToastCurve
 
-A corner toast, which moves as if mounted on a mechanical linkage, actuated by servo motors.
+A toast, which moves on a curved path, as if mounted on a mechanical linkage, actuated by servo motors.
+Set the `locationV` property to `top`, `middle` or `bottom`.
+Set the `locationH` property to `left`, `middle` or `right`.
+It is not modal.
+Show and hide it with the usual `.show()`, `.hide()` and `.set('showing', boolean)`.
+
 By default, it's sized to contain its children.
-Set a width or height in its style property.    Default styling is white text on a dark background.
+Corner toasts don't require a width or height in their style property. 
+Top middle and bottom middle toasts will be full width, unless you set a width.
+You must set a height for left middle and right middle toasts.
+ 
+Default styling is white text on a dark background.
 
 
 ## Unwritten widgets

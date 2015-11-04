@@ -9,6 +9,7 @@ var ToastTestJig = enyo.kind({
         {
             name: 'toast',
             kind: "animated.Toast",
+            locationV: 'bottom',
             onAnimateFinish: "animateFinish",
             components: [
                 {content: "I'm a Toast!"}

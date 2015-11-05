@@ -19,10 +19,15 @@ enyo.kind({
                 {name: 'toastTopRight', kind: "animated.Toast", locationV: 'top', locationH: 'right', style: 'width: 10em', components: [
                     {content: "I'm a Toast at the top right."}
                 ]},
-                {kind: "animated.ToastCurve", locationV: 'bottom', locationH: 'left', style: 'width: 12em', components: [
+                {name: 'toastCurveBottomLeft', kind: "animated.ToastCurve", locationV: 'bottom', locationH: 'left', style: 'width: 12em', components: [
                     {name: 'question', content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?", style: 'margin-bottom: 10px'},
                     {name: 'toasterYesBtn', kind: 'onyx.Button', content: $L('Yes'), ontap: 'toggleToastCurve'},
                     {kind: 'onyx.Button', content: $L('No'), ontap: 'toggleToastCurve', style: 'float: right;'}
+                ]},
+                {name: 'toastCurveRight', kind: "animated.ToastCurve", locationV: 'middle', locationH: 'right', style: 'width: 12em; height: 8em', components: [
+                    {content: "Donec nec nisl felis. Donec aliquet semper est, semper sagittis leo.", style: 'margin-bottom: 10px'},
+                    {name: 'toasterOkBtn', kind: 'onyx.Button', content: $L('Ok'), ontap: 'toggleToastCurve'},
+                    {kind: 'onyx.Button', content: $L('Cancel'), ontap: 'toggleToastCurve', style: 'float: right;'}
                 ]},
                 {kind: "onyx.Toolbar", components: [
                     {kind: "onyx.Button", content: "Toasts", ontap: "toggleStraightToasts"},
@@ -44,6 +49,7 @@ enyo.kind({
         this.$.toastTopRight.set('showing', ! this.$.toastTopRight.get('showing'));
     },
     toggleToastCurve: function(inSender, inEvent) {
-        this.$.toastCurve.set('showing', ! this.$.toastCurve.get('showing'));
+        this.$.toastCurveBottomLeft.set('showing', ! this.$.toastCurveBottomLeft.get('showing'));
+        this.$.toastCurveRight.set('showing', ! this.$.toastCurveRight.get('showing'));
     }
 });

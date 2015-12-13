@@ -15,7 +15,7 @@ enyo.kind({
 
     create: function () {
         if(/top/i.test(this.locationV)) {
-            this.log(this.name, "top");
+            //this.log(this.name, "top");
             this.applyStyle('bottom', 'auto');
             this.translateY = '-100%';
             this.boxShadowY = '6px';
@@ -26,7 +26,7 @@ enyo.kind({
                 this.applyStyle('border-bottom-right-radius', '8px');
             }
         } else if (/bottom/i.test(this.locationV)) {
-            this.log(this.name, "bottom");
+            //this.log(this.name, "bottom");
             this.applyStyle('top', 'auto');
             this.translateY = '100%';
             this.boxShadowY = '-4px';
@@ -37,7 +37,7 @@ enyo.kind({
                 this.applyStyle('border-top-right-radius', '8px');
             }
         } else {
-            this.log(this.name, "middle");
+            //this.log(this.name, "middle");
             this.translateY = '0';
             this.boxShadowY = '6px';
             if (! /left/i.test(this.locationH)) {
@@ -50,20 +50,32 @@ enyo.kind({
             }
         }
         if(/left/i.test(this.locationH)) {
-            this.log(this.name, "left");
+            //this.log(this.name, "left");
             this.applyStyle('right', 'auto');
             this.translateX = '-100%';
             this.boxShadowX = '6px';
         } else if (/right/i.test(this.locationH)) {
-            this.log(this.name, "right");
+            //this.log(this.name, "right");
             this.applyStyle('left', 'auto');
             this.translateX = '100%';
             this.boxShadowX = '-4px';
         } else {
-            this.log(this.name, "middle");
+            //this.log(this.name, "middle");
             this.translateX = '0';
             this.boxShadowX = '6px';
         }
+
+        var div = document.createElement('div');
+        if ('transition' in div.style) {
+            //this.log("transition supported");
+            this.transitionTimingFunction = 'transition-timing-function';
+            this.transform = 'transform';
+        } else {
+            //this.log("transition not supported");
+            this.transitionTimingFunction = '-webkit-transition-timing-function';
+            this.transform = '-webkit-transform';
+        }
+
         this.inherited(arguments);
         this.set('showing', false);   // false to initially hide
     },
@@ -71,12 +83,12 @@ enyo.kind({
     showingChanged: function (inOldValue, inNewValue) {
         //this.log(arguments);
         if (inNewValue) {
-            this.applyStyle('transition-timing-function', null);
-            this.applyStyle('transform', 'translate(0,0)');
+            this.applyStyle(this.transitionTimingFunction, null);
+            this.applyStyle(this.transform, 'translate(0,0)');
             this.applyStyle('box-shadow', this.boxShadowX + ' ' + this.boxShadowY + ' 10px rgba(0, 0, 0, 0.2)');
         } else {
-            this.applyStyle('transition-timing-function', 'ease-in');
-            this.applyStyle('transform', 'translate('+this.translateX+' ,'+this.translateY+')');
+            this.applyStyle(this.transitionTimingFunction, 'ease-in');
+            this.applyStyle(this.transform, 'translate('+this.translateX+' ,'+this.translateY+')');
         }
     },
 

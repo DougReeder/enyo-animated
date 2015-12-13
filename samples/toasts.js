@@ -24,7 +24,7 @@ enyo.kind({
                     {name: 'toasterYesBtn', kind: 'onyx.Button', content: $L('Yes'), ontap: 'toggleToastCurve'},
                     {kind: 'onyx.Button', content: $L('No'), ontap: 'toggleToastCurve', style: 'float: right;'}
                 ]},
-                {name: 'toastCurveRight', kind: "animated.ToastCurve", locationV: 'middle', locationH: 'right', style: 'width: 12em; height: 8em', components: [
+                {name: 'toastCurveRight', kind: "animated.ToastCurve", locationV: 'middle', locationH: 'right', style: 'width: 13em; height: 8em', components: [
                     {content: "Donec nec nisl felis. Donec aliquet semper est, semper sagittis leo.", style: 'margin-bottom: 10px'},
                     {name: 'toasterOkBtn', kind: 'onyx.Button', content: $L('Ok'), ontap: 'toggleToastCurve'},
                     {kind: 'onyx.Button', content: $L('Cancel'), ontap: 'toggleToastCurve', style: 'float: right;'}

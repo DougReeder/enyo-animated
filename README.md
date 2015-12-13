@@ -3,7 +3,7 @@
 These Controls are designed to
 * help the user mentally model the application UI
 * not make the user wait
-* animate at 60 fps on modern mobile devices
+* animate at 60 fps on modern mobile & desktop devices
 * be easy for developers to incorporate in apps
 * work with Onyx, Mochi or Moonstone widgets (the default styling is usually Onyx).
 
@@ -20,7 +20,7 @@ They are designed around the properties that GPUs can readily animate:
 
 [Animation for Attention and Comprehension](http://www.nngroup.com/articles/animation-usability/)
 
-[Motion & Meaning, episode 3](http://motionandmeaning.io/episode03.html)
+[Motion & Meaning podcast, episode 3](http://motionandmeaning.io/episode03.html)
 
 [High Performance Animations](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 
@@ -29,9 +29,9 @@ They are designed around the properties that GPUs can readily animate:
 
 ## Using
 
-1. Clone this repo to a directory in the lib directory of an Enyo app (beside layout).
+1. Clone this repo to a directory in the lib directory of an Enyo app (alongside layout).
 2. To source/package.js, add the line `"$lib/enyo-animated",`
-3. Add one or more of the controls to your app.
+3. Add one or more of the Controls to your app.
 
 
 ## animated.Toast

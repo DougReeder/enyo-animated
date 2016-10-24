@@ -29,12 +29,16 @@ They are designed around the properties that GPUs can readily animate:
 
 ## Using
 
-1. Clone this repo to a directory in the lib directory of an Enyo app (alongside layout).
-2. To source/package.js, add the line `"$lib/enyo-animated",`
-3. Add one or more of the Controls to your app.
+1. In your app's `.enyoconfig`, 
+	- to the `libraries` array add `"enyo-animated"`
+	- to the `sources` object add `"enyo-animated": "https://github.com/DougReeder/enyo-animated.git"`
+	- to the `targets` object add `"enyo-animated": "master"`
+2. Run `enyo init` to copy enyo-animated to your `lib` directory
+3. At the beginning of a source file, add `var ToastCurve = require('enyo-animated/ToastCurve');` 
+(or whatever Control you need)
+4. Add the control, with something like `{name: 'toastCurveBottom', kind: ToastCurve, locationV: 'bottom', locationH: 'middle', style: 'width: 12em', components: [...`
 
-
-## animated.Toast
+## Toast
 
 A toast, which moves like a CD tray in a straight line.
 Set the `locationV` property to `top`, `middle` or `bottom`.
@@ -53,7 +57,7 @@ If you set a height, they are centered.
 Default styling is white text on a dark background.
 
 
-## animated.ToastCurve
+## ToastCurve
 
 A toast, which moves on a curved path, as if mounted on a mechanical linkage, actuated by servo motors.
 Set the `locationV` property to `top`, `middle` or `bottom`.

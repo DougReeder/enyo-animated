@@ -1,13 +1,16 @@
 /* unit & functional tests for animated.ToastCurve
- * Copyright © 2015 Hominid Software */
+ * Copyright © 2015-2016 Hominid Software */
 /*jsl:import ../source/ToastCurve.js */
 
-var ToastCurveTestJig = enyo.kind({
+var kind = require('enyo/kind'),
+    ToastCurve = require('../src/ToastCurve');
+
+var ToastCurveTestJig = kind({
     name: "ToastCurveTestJig",
     animateFinishResponse: null,
     components: [
         {
-            kind: "animated.ToastCurve",
+            kind: ToastCurve,
             locationV: 'bottom',
             locationH: 'right',
             onAnimateFinish: "animateFinish",

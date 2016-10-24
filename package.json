@@ -1,0 +1,18 @@
+{
+  "name": "enyo-animated",
+  "main": "index.js",
+  "assets": [],
+  "styles": [],
+  "devAssets": ["test/*"],
+  "moduleDir": "src",
+  "version": "1.1",
+  "description": "A library of UX-enhancing, 60 fps animated Controls for the Enyo JavaScript framework",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DougReeder/enyo-animated.git"
+  },
+  "author": "Doug Reeder",
+  "license": "MIT",
+  "bugs": { "email" : "sales@hominidsoftware.com"},
+  "homepage": "https://github.com/DougReeder/enyo-animated"
+}

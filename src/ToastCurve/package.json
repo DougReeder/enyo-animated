@@ -1,0 +1,6 @@
+{
+  "main": "ToastCurve.js",
+  "styles": [
+    "ToastCurve.css"
+  ]
+}

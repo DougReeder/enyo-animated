@@ -1,14 +1,17 @@
 /* unit & functional tests for animated.Toast
- * Copyright © 2015 Hominid Software */
+ * Copyright © 2015-2016 Hominid Software */
 /*jsl:import ../source/Toast.js */
 
-var ToastTestJig = enyo.kind({
+var kind = require('enyo/kind'),
+    Toast = require('../src/Toast');
+
+var ToastTestJig = kind({
     name: "ToastTestJig",
     animateFinishResponse: null,
     components: [
         {
             name: 'toast',
-            kind: "animated.Toast",
+            kind: Toast,
             locationV: 'bottom',
             onAnimateFinish: "animateFinish",
             components: [

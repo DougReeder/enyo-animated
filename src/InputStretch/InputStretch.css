@@ -1,0 +1,21 @@
+
+
+.inputStretch {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.inputStretch > * {
+}
+
+.inputStretch > input:first-child {
+    width: 0%;
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+}
+
+.inputStretch > input:first-child:focus {
+    width: 100%;
+}

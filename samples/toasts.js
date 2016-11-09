@@ -4,6 +4,7 @@
 var
     kind = require('enyo/kind'),
     FittableRows = require('layout/FittableRows'),
+    InputStretch = require('enyo-animated/InputStretch'),
     Toast = require('enyo-animated/Toast'),
     ToastCurve = require('enyo-animated/ToastCurve'),
     Button = require('onyx/Button'),
@@ -40,12 +41,16 @@ module.exports = kind({
                     {kind: Button, content: $L('Cancel'), ontap: 'toggleToastCurve', style: 'float: right;'}
                 ]},
                 {kind: Toolbar, components: [
-                    {kind: Button, content: "Toasts", ontap: "toggleStraightToasts"},
-                    {kind: Button, content: "ToastCurve", ontap: "toggleToastCurve"}
+                    {kind: InputStretch, placeholder: $L("Enter text"), accessibilityRole: 'search',
+                            oninput: 'inputInputOrChange', onchange: 'inputInputOrChange', onkeydown: 'inputKeydown',
+                            components: [
+                        {kind: Button, content: "Toasts", ontap: "toggleStraightToasts"},
+                        {kind: Button, content: "ToastCurve", ontap: "toggleToastCurve"}
+                    ]}
                 ]},
                 {kind: Scroller, fit: true, style: 'background-color: white', components: [
                     {name: "main", classes: "nice-padding", allowHtml: true}
-                ]},
+                ]}
             ]
         },
         {
@@ -61,5 +66,17 @@ module.exports = kind({
     toggleToastCurve: function(inSender, inEvent) {
         this.$.toastCurveBottomLeft.set('showing', ! this.$.toastCurveBottomLeft.get('showing'));
         this.$.toastCurveRight.set('showing', ! this.$.toastCurveRight.get('showing'));
+    },
+
+    inputInputOrChange: function (inSender, inEvent) {
+        this.log(inEvent.type, this.$.inputStretch.get('value'));
+        this.$.main.set('content', this.$.main.get('content') + inEvent.type + " " + this.$.inputStretch.get('value') + "<br>");
+        this.$.scroller.scrollToBottom();
+    },
+    inputKeydown: function (inSender, inEvent) {
+        var code = inEvent.charCode || inEvent.keyCode;
+        if (code === 13 || code === 38 || code === 40) {
+            inEvent.dispatchTarget.node.blur();
+        }
     }
 });

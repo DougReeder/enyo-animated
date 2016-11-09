@@ -73,6 +73,21 @@ You must set a height for left middle and right middle toasts.
 Default styling is white text on a dark background.
 
 
+## InputStretch
+
+A horizontal container, with a built-in input field. It allows the user to enter sizeable text, without the input
+field taking up too much room.
+
+Child Controls are right-aligned, using flexbox.
+When unfocused, the input field takes up the space not used by the other children.
+When focused, the input field stretches to the full width.
+Setting the following properties on InputStretch sets them on the child input: acessibilityRole, defaultFocus, disabled, placeholder, selectOnFocus, type and value.
+Events on the child input bubble up.
+
+Only put a Control in an InputStretch, if the user won't need it when the child input is focused.
+
+
+
 ## Unwritten widgets
 
 Feel free to implement and contribute these.
@@ -87,12 +102,13 @@ This Control would expand from a visible control, and contract back into it, lik
 Not all of these are optimized to animate smoothly.
 
 * [SvgSpinner](https://github.com/infusionsoft/enyo-svg-spinner) (SVG animation)
-* [moon.Spinner](http://enyojs.com/docs/latest/index.html#/kind/moon.Spinner) (CSS keyframe animation)
-* [enyo.Panels](http://enyojs.com/docs/latest/developer-guide/building-apps/layout/panels.html) 
-and its descendants such as enyo.ImageCarousel
-* trees using [enyo.Node](http://enyojs.com/docs/latest/index.html#/kind/enyo.Node)
-* [enyo.Slidable](http://enyojs.com/docs/latest/index.html#/kind/enyo.Slideable) can be configured as toast.
-* [enyo.PulldownList](http://enyojs.com/docs/latest/index.html#/kind/enyo.PulldownList)
+* [moonstone/Spinner](http://enyojs.com/docs/latest/index.html#/kind/moonstone/Spinner/Spinner) (CSS keyframe animation)
+* [layout/Panels](http://enyojs.com/docs/latest/index.html#/kind/layout/Panels/Panels) 
+and its descendants such as [layout/ImageCarousel](http://enyojs.com/docs/latest/index.html#/kind/layout/ImageCarousel/ImageCarousel)
+* trees using [layout/Node](http://enyojs.com/docs/latest/index.html#/kind/layout/Node/Node)
+* [layout/Slidable](http://enyojs.com/docs/latest/index.html#/kind/layout/Slideable/Slideable) can be configured as toast.
+* [layout/PulldownList](http://enyojs.com/docs/latest/index.html#/kind/layout/PulldownList/PulldownList)
+* [moonstone/ExpandableInput](http://enyojs.com/docs/latest/index.html#/kind/moonstone/ExpandableInput/ExpandableInput)
 
 
 ## How to contribute

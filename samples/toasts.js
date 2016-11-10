@@ -55,8 +55,18 @@ module.exports = kind({
         },
         {
             name: 'secondaryPane',
-            content: "I'm a pane above the toasters, which complicates the logical model.",
-            style: 'height: 4em; transform: translateZ(2px); background-color: #eee; padding: 1em'
+            style: 'height: 4em; transform: translateZ(2px); background-color: #eee; padding: 1em',
+            components: [
+                {kind: InputStretch, end: true,
+                    oninput: 'inputInputOrChange', onchange: 'inputInputOrChange', onkeydown: 'inputKeydown',
+                    components: [
+                        {
+                            content: "pane above the toasters",
+                            style: 'width: 75%'
+                        }
+                    ]
+                }
+            ]
         }
     ],
     toggleStraightToasts: function(inSender, inEvent) {
@@ -69,8 +79,9 @@ module.exports = kind({
     },
 
     inputInputOrChange: function (inSender, inEvent) {
-        this.log(inEvent.type, this.$.inputStretch.get('value'));
-        this.$.main.set('content', this.$.main.get('content') + inEvent.type + " " + this.$.inputStretch.get('value') + "<br>");
+        var value = inSender.get('value');
+        this.log(inEvent.type, value);
+        this.$.main.set('content', this.$.main.get('content') + inEvent.type + " " + value + "<br>");
         this.$.scroller.scrollToBottom();
     },
     inputKeydown: function (inSender, inEvent) {

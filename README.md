@@ -75,16 +75,17 @@ Default styling is white text on a dark background.
 
 ## InputStretch
 
-A horizontal container, with a built-in input field. It allows the user to enter sizeable text, without the input
-field taking up too much room.
+A horizontal flexbox container, with a built-in input field. It allows the user to enter sizeable text, without the input
+field taking up space all the time.
 
-Child Controls are right-aligned, using flexbox.
+The input is aligned to the row start (left), unless the property `end` is true.
 When unfocused, the input field takes up the space not used by the other children.
-When focused, the input field stretches to the full width.
-Setting the following properties on InputStretch sets them on the child input: acessibilityRole, defaultFocus, disabled, placeholder, selectOnFocus, type and value.
+When focused, the input field stretches to the full width, obscuring the other child controls.
+Setting the following properties on InputStretch sets them on the child input: `acessibilityRole`, `defaultFocus`, 
+`disabled`, `placeholder`, `selectOnFocus`, `type` and `value`.
 Events on the child input bubble up.
 
-Only put a Control in an InputStretch, if the user won't need it when the child input is focused.
+Only put a Control in an InputStretch, if the user won't need it when the child input is focused!
 
 
 

@@ -44,6 +44,12 @@ module.exports = kind({
 
     rendered: function () {
         this.log();
+        this.inherited(arguments);
+        if (this.get('end')) {
+            this.applyStyle('justify-content', 'flex-start');
+            this.$.input.applyStyle('left', null);
+            this.$.input.applyStyle('right', '0');
+        }
         this.adjustMinWidth();
     },
     handleResize: function () {

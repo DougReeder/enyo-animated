@@ -26,6 +26,8 @@ They are designed around the properties that GPUs can readily animate:
 
 [Cubic-Bezier design tool](http://cubic-bezier.com/)
 
+[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
 
 ## Using
 
@@ -54,6 +56,9 @@ If you set a width, they are centered.
 Left and right edge toasts are as tall as their parent, by default.  
 If you set a height, they are centered.
 
+Child buttons and inputs should set `attributes: {tabindex: -1}` to avoid tabbing problems.
+When the toast is shown, child controls may have a positve tabindex.
+
 Default styling is white text on a dark background.
 
 
@@ -69,24 +74,38 @@ By default, it's sized to contain its children.
 Corner toasts don't require a width or height in their style property. 
 Top middle and bottom middle toasts will be full width, unless you set a width.
 You must set a height for left middle and right middle toasts.
- 
+
+Child buttons and inputs should set `attributes: {tabindex: -1}` to avoid tabbing problems.
+When the toast is shown, child controls may have a positve tabindex.
+
 Default styling is white text on a dark background.
 
 
 ## InputStretch
 
 A horizontal flexbox container, with a built-in input field. It allows the user to enter sizeable text, without the input
-field taking up space all the time.
+field always taking up space.
 
-The input is aligned to the row start (left), unless the property `end` is true.
+The input is aligned to the row start (left in left-to-right contexts), unless the property `end` is true.
 When unfocused, the input field takes up the space not used by the other children.
 When focused, the input field stretches to the full width, obscuring the other child controls.
+Other child controls may get their size from their contents, or set their width using CSS.
+
 Setting the following properties on InputStretch sets them on the child input: `acessibilityRole`, `defaultFocus`, 
 `disabled`, `placeholder`, `selectOnFocus`, `type` and `value`.
+Types `url` and `email` are most useful (aside from the default `text`).
 Events on the child input bubble up.
 
 Only put a Control in an InputStretch, if the user won't need it when the child input is focused!
 
+As with all Inputs, add a label if the input has a value when the user first sees it.
+The placeholder is not sufficient.  The label may be a child of the InputStretch!
+
+
+## InputSearchStretch
+
+Similar to an InputStretch, but styled as a search field.
+A separate label is usually not required.
 
 
 ## Unwritten widgets
@@ -126,7 +145,7 @@ to assert your compliance with [Open webOS Developer Grant and Certificate of Or
 
 ("The MIT License (MIT)")
 
-Copyright © 2015 Hominid Software
+Copyright © 2015-2016 Hominid Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

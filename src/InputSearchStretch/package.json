@@ -1,0 +1,9 @@
+{
+  "main": "InputSearchStretch.js",
+  "styles": [
+    "InputSearchStretch.less"
+  ],
+  "assets": [
+    "../../images/search-input.png"
+  ]
+}

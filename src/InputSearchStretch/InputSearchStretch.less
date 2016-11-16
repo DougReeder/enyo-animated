@@ -1,0 +1,46 @@
+/** Copyright © 2016 Hominid Software */
+
+.inputSearchStretch {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    & > label:first-child {
+        width: 0%;
+        background: white;
+        border-radius: 2ex;
+
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+
+        &.stretch {
+            width: 100%;
+            box-shadow: 0 0 3pt 2pt rgb(34, 252, 152);
+        }
+
+        div:first-child {
+            width: 10px;
+        }
+
+        input {
+            flex:1;
+            box-sizing:border-box;
+            height: 100%;
+            width:48px;
+            border:none;
+            outline:none;
+            font-size:16px;
+            border-radius: 2ex;
+        }
+
+        div:last-child {
+            width: 30px;
+            height: 100%;
+            background: url("../../images/search-input.png") 25% center no-repeat;
+        }
+    }
+}
+
+
+

@@ -17,6 +17,7 @@ module.exports = kind({
     name: "Toasts",
     kind: FittableRows,
     fit: true,
+    style: 'max-width:450px; margin-left:auto; margin-right:auto',
     components: [
         {
             name: 'mainPane',

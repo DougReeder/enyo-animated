@@ -77,5 +77,15 @@ module.exports = kind({
     transitionComplete: function (inSender, inEvent) {
         // this.log(inEvent.propertyName, inEvent.elapsedTime);
         this.doAnimateFinish();
+    },
+
+    focus: function () {
+        this.log();
+        this.$.input.focus();
+    },
+
+    blur: function () {
+        this.log();
+        this.$.input.blur();
     }
 });

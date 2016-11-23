@@ -89,8 +89,14 @@ module.exports = kind({
     },
     inputKeydown: function (inSender, inEvent) {
         var code = inEvent.charCode || inEvent.keyCode;
-        if (code === 13 || code === 38 || code === 40) {
+        if (code === 13 ) {
             inEvent.dispatchTarget.node.blur();
+        } else if (code === 38) {   // up arrow
+            // this.$.inputSearchStretch.blur();
+            this.$.inputSearchStretch.focus();
+        } else if (code === 40) {   // down arrow
+            // this.$.inputStretch.blur();
+            this.$.inputStretch.focus();
         }
     }
 });

@@ -94,11 +94,12 @@ Other child controls may get their size from their contents, or set their width 
 Setting the following properties on InputStretch sets them on the child input: `acessibilityRole`, `defaultFocus`, 
 `disabled`, `placeholder`, `selectOnFocus`, `type` and `value`.
 Types `url` and `email` are most useful (aside from the default `text`).
+The methods `focus()` and `blur()` focus and blur the child input.
 Events on the child input bubble up.
 
 Only put a Control in an InputStretch, if the user won't need it when the child input is focused!
 
-As with all Inputs, add a label if the input has a value when the user first sees it.
+As with all Inputs, add a label if the input may have a value when the user first sees it.
 The placeholder is not sufficient.  The label may be a child of the InputStretch!
 
 

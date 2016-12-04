@@ -84,11 +84,12 @@ Default styling is white text on a dark background.
 ## InputStretch
 
 A horizontal flexbox container, with a built-in input field. It allows the user to enter sizeable text, without the input
-field always taking up space.
+field always taking up too much space.
 
-The input is aligned to the row start (left in left-to-right contexts), unless the property `end` is true.
+The input field is aligned to the left (actually the row start), unless the property `end` is true.
 When unfocused, the input field takes up the space not used by the other children.
-When focused, the input field stretches to the full width, obscuring the other child controls.
+When focused, the input field stretches to `targetWidth` pixels,
+ or the full width if targetWidth is not set, obscuring other child controls.
 Other child controls may get their size from their contents, or set their width using CSS.
 
 Setting the following properties on InputStretch sets them on the child input: `acessibilityRole`, `defaultFocus`, 

@@ -17,7 +17,7 @@ module.exports = kind({
     name: "Toasts",
     kind: FittableRows,
     fit: true,
-    style: 'max-width:450px; margin-left:auto; margin-right:auto',
+    style: 'max-width:400px; margin-left:auto; margin-right:auto',
     components: [
         {
             name: 'mainPane',
@@ -45,7 +45,7 @@ module.exports = kind({
                     {kind: Button, content: $L('Cancel'), attributes: {tabindex: -1}, ontap: 'toggleToastCurve', style: 'float: right;'}
                 ]},
                 {kind: Toolbar, components: [
-                    {kind: InputSearchStretch, placeholder: $L("Enter search text"), accessibilityRole: 'search',
+                    {kind: InputSearchStretch, placeholder: $L("Enter search text"), targetWidth: 200,
                             oninput: 'inputInputOrChange', onchange: 'inputInputOrChange', onkeydown: 'inputKeydown',
                             components: [
                         {kind: Button, content: "Toasts", ontap: "toggleStraightToasts"},

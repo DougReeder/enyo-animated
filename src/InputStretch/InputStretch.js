@@ -43,7 +43,6 @@ module.exports = kind({
     ],
 
     rendered: function () {
-        this.log();
         this.inherited(arguments);
         if (this.get('end')) {
             this.applyStyle('justify-content', 'flex-start');
@@ -62,20 +61,22 @@ module.exports = kind({
         }
         remainingWidthPx = Math.max(remainingWidthPx - 10, 48);
         this.$.input.applyStyle('min-width', remainingWidthPx + "px");
+
+        if (this.targetWidth > 0) {
+            this.$.input.applyStyle('max-width', Math.max(this.targetWidth, remainingWidthPx) + "px");
+        }
     },
 
     transitionComplete: function (inSender, inEvent) {
-        this.log(inEvent.propertyName, inEvent.elapsedTime);
+        // this.log(inEvent.propertyName, inEvent.elapsedTime);
         this.doAnimateFinish();
     },
 
     focus: function () {
-        this.log();
         this.$.input.focus();
     },
 
     blur: function () {
-        this.log();
         this.$.input.blur();
     }
 });

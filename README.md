@@ -100,7 +100,7 @@ Events on the child input bubble up.
 
 Only put a Control in an InputStretch, if the user won't need it when the child input is focused!
 
-As with all Inputs, add a label if the input may have a value when the user first sees it.
+As usual with Inputs, add a label, if the input may have a value when the user first sees it.
 The placeholder is not sufficient.  The label may be a child of the InputStretch!
 
 
@@ -108,6 +108,13 @@ The placeholder is not sufficient.  The label may be a child of the InputStretch
 
 Similar to an InputStretch, but styled as a search field.
 A separate label is usually not required.
+
+You probably need a CSS rule, so the font size of the input matches its surroundings.
+For example:
+
+    .inputSearchStretch input {
+        font-size: 20px;
+    }
 
 
 ## Unwritten widgets
